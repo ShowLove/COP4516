@@ -1,12 +1,18 @@
 //package bruteforce;
 import java.util.Arrays;
+import java.io.*;
+import java.util.*;
 
 public class runCombos {
 
 	public static void main( String args[] )
 	{
-	    int[] items = new int[5];
-	    printCombos(items, 0, 5);
+		System.out.println("N:");
+
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();   //Number of test cases
+	    int[] items = new int[N];
+	    printCombos(items, 0, N);
 	    System.out.println();
 	}
 

@@ -31,10 +31,10 @@ void runUpWards();
 int main() {
 
     // Run what you want...
-    if (ODOMETER) runOdometer();
-    if (PERMS) runPerms();
-    if (COMBOS) runCombos();
-    if (DERANGEMENTS) runDerangements();
+    //if (ODOMETER) runOdometer();
+    //if (PERMS) runPerms();
+    //if (COMBOS) runCombos();
+    //if (DERANGEMENTS) runDerangements();
     if (UPWARDS) runUpWards();
 
     return 0;
@@ -42,8 +42,11 @@ int main() {
 
 // Runs a 4 digit odometer.
 void runOdometer() {
-    int meter[4];
-    printOdometer(meter, 0, 4);
+    printf("Odometer_n_? -->");
+    int n = 0;
+    scanf("%d", &n);
+    int meter[n];
+    printOdometer(meter, 0, n);
     printf("\n");
 }
 
@@ -73,10 +76,13 @@ void print(int array[], int n) {
 
 // Prints out all permutations of 0,1,2,3.
 void runPerms() {
-    int perm[4];
-    int i, used[4];
-    for (i=0; i<4; i++) used[i] = 0;
-    printPerms(perm, used, 0, 4);
+    printf("Perm_n_? -->");
+    int n = 0;
+    scanf("%d", &n);
+    int perm[n];
+    int i, used[n];
+    for (i=0; i<n; i++) used[i] = 0;
+    printPerms(perm, used, 0, n);
     printf("\n");
 }
 
@@ -105,9 +111,12 @@ void printPerms(int perm[], int used[], int k, int n) {
 
 // Prints all combinations of 0,1,2,3,4.
 void runCombos() {
-    int i, items[5];
-    for (i=0; i<5; i++) items[i] = 0;
-    printCombos(items, 0, 5);
+    printf("Combos_n_? -->");
+    int n = 0;
+    scanf("%d", &n );
+    int i, items[n];
+    for (i=0; i<n; i++) items[i] = 0;
+    printCombos(items, 0, n);
     printf("\n");
 }
 
@@ -140,10 +149,13 @@ void printSubsets(int subset[], int n) {
 
 // Prints out all derangements of 0,1,2,3,4.
 void runDerangements() {
-    int perm[5];
-    int i, used[5];
-    for (i=0; i<5; i++) used[i] = 0;
-    printDerangements(perm, used, 0, 5);
+    printf("Derangments_n_? -->");
+    int n = 0;
+    scanf("%d", &n);
+    int perm[n];
+    int i, used[n];
+    for (i=0; i<n; i++) used[i] = 0;
+    printDerangements(perm, used, 0, n);
     printf("\n");
 }
 
@@ -171,9 +183,16 @@ void printDerangements(int perm[], int used[], int k, int n) {
 
 // Prints all 5 length upwards with skip 2.
 void runUpWards() {
-    char word[6];
-    word[5] = '\0';
-    printUpWards(word, 2, 0, 5);
+    printf("Upwards_n_? -->");
+    int n = 0;
+    scanf("%d", &n);
+    printf("Upwards_k_? -->");
+    int k = 0;
+    scanf("%d", &k);
+    char word[n+1];
+    word[n] = '\0';
+
+    printUpWards(word, 2, k, n);
     printf("\n");
 }
 

@@ -19,6 +19,12 @@
 
 	            input = new Scanner(file);
 
+	            int processCount = 0;
+	            int runFor = 0;
+	            String use = new String("");
+	            //String str = new String("SOME")
+	            int quantum = 0;
+
 
 	            while (input.hasNextLine()) 
 	            {
@@ -28,12 +34,21 @@
 	                {
 	                	if(values[i].equals("#"))
 	                		break;
-	                	System.out.print(" S"+values[i]+"E ");
+	                	if(values[i].equals("processcount"))
+	                		processCount = Integer.parseInt( values[i+1] );
+	                	if(values[i].equals("runfor"))
+	                		runFor = Integer.parseInt( values[i+1] );
+						if(values[i].equals("use"))
+						{	
+	                		use = values[i+1];
+						}
+	                	if(values[i].equals("quantum"))
+	                		quantum = Integer.parseInt( values[i+1] );                			               
+	                	//System.out.print(" S"+values[i]+"E ");
 	                }
-	                System.out.println();
-	                //System.out.print(line);
-	                System.out.println();	      
+	      
 	            }
+	            System.out.println("p_"+processCount+" r_"+runFor+" u_"+use+" q_"+quantum);
 	            input.close();
 
 	        } 
